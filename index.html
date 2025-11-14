@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Submit to Google Form</title>
+  <style>
+    body{font-family:system-ui,Arial;margin:20px;max-width:720px}
+    label{display:block;margin-top:12px;font-weight:600}
+    input{width:100%;padding:10px;margin-top:6px;border:1px solid #ccc;border-radius:6px;box-sizing:border-box}
+    button{margin-top:12px;padding:10px 14px;background:#111827;color:#fff;border:0;border-radius:6px;cursor:pointer}
+    #status{margin-top:12px;font-weight:600}
+    pre{background:#f3f4f6;padding:8px;border-radius:6px;white-space:pre-wrap}
+  </style>
+</head>
+<body>
+  <h2>Submit to Google Form</h2>
+
+  <label for="name">Name</label>
+  <input id="name" type="text">
+
+  <label for="e_post">E-post</label>
+  <input id="e_post" type="email">
+
+  <label for="pwd">Key</label>
+  <input id="pwd" type="text">
+
+  <button id="sendBtn">Submit</button>
+
+  <!-- Hidden form which ALWAYS works on GitHub Pages -->
+  <iframe name="hidden_iframe" style="display:none"></iframe>
+  <form id="fallback" action="https://docs.google.com/forms/d/e/1FAIpQLSc1koXMqPjJiVTp4PiwUTWiq8mm1mUA90XQYVUC0ORMBCL-8A/formResponse" method="POST" target="hidden_iframe" style="display:none;">
+    <input name="entry.624312929" id="f_name">
+    <input name="entry.1254027685" id="f_epost">
+    <input name="entry.818359634" id="f_key">
+  </form>
+
+  <div id="status"></div>
+  <pre id="dbg" style="display:none"></pre>
+
+<script>
+(function(){
+  const entryName = "entry.624312929";
+  const entryEpost = "entry.1254027685";
+  const entryKey  = "entry.818359634";
+  const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSc1koXMqPjJiVTp4PiwUTWiq8mm1mUA90XQYVUC0ORMBCL-8A/formResponse";
+
+  const $ = id => document.getElementById(id);
+
+  function setStatus(msg, good){
+    const st = $("status");
+    st.textContent = msg;
+    st.style.color = good ? "green" : "red";
+  }
+
+  function send(){
+    const name = $("name").value.trim();
+    const epost = $("e_post").value.trim();
+    const key = $("pwd").value.trim();
+
+    if(!name && !epost && !key){
+      setStatus("Empty fields", false);
+      return;
+    }
+
+    // Fill hidden form
+    $("f_name").value = name;
+    $("f_epost").value = epost;
+    $("f_key").value = key;
+
+    // Submit hidden form
+    $("fallback").submit();
+    setStatus("Submitted. Check Google Form responses.", true);
+  }
+
+  $("sendBtn").addEventListener("click", send);
+})();
+</script>
+</body>
+</html>
